@@ -11,7 +11,7 @@ public class ToDoListApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ToDoListApplication.class.getResource("todo-list-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 785, 650);
         stage.setTitle("Aagna's To-Do List");
         stage.setScene(scene);
         stage.show();

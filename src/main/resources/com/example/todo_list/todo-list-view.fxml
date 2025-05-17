@@ -2,42 +2,47 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane cacheShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="749.0" scaleShape="false" style="-fx-background-color: #f7e7cf;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.todo_list.ToDoTaskController">
+<Pane cacheShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="790.0" scaleShape="false" style="-fx-background-color: #f7e7cf;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.todo_list.ToDoTaskController">
 
    <children>
-      <Label layoutX="190.0" layoutY="30.0" prefHeight="47.0" prefWidth="321.0" scaleShape="false" text="Aagna's To-Do List">
+      <Label layoutX="232.0" layoutY="27.0" prefHeight="47.0" prefWidth="321.0" scaleShape="false" text="Aagna's To-Do List">
          <font>
             <Font size="38.0" />
          </font>
       </Label>
-      <TextField fx:id="new_task" layoutX="23.0" layoutY="148.0" prefHeight="40.0" prefWidth="596.0" promptText="Enter the new task you want to add" scaleShape="false" style="-fx-background-color: #4682b4;" />
-      <Button fx:id="add_new_task" layoutX="635.0" layoutY="155.0" mnemonicParsing="false"  prefHeight="26.0" prefWidth="79.0" scaleShape="false" style="-fx-background-color: #65bb72;" text="Add" />
 
 
-      <Label fx:id="balance" layoutX="281.0" layoutY="232.0" scaleShape="false" text="Pending Tasks">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-
-      <Label fx:id="pendig_task_1" layoutX="23.0" layoutY="266.0" prefHeight="40.0" prefWidth="596.0" scaleShape="false" style="-fx-background-color: #fa9f74;" />
-      <Button fx:id="pendig_task_edit_1" layoutX="626.0" layoutY="273.0" mnemonicParsing="false"  scaleShape="false" style="-fx-background-color: #949590;" text="Edit" />
-      <Button fx:id="pendig_task_delete_1" layoutX="674.0" layoutY="273.0" mnemonicParsing="false"  scaleShape="false" style="-fx-background-color: #d34909;" text="Delete" />
+      <TextField fx:id="newTask" layoutX="33.0" layoutY="148.0" prefHeight="40.0" prefWidth="596.0" promptText="Enter the new task you want to add" scaleShape="false" style="-fx-background-color: #ffffff;" />
+      <Button fx:id="add_new_task" layoutX="646.0" layoutY="155.0" mnemonicParsing="false" onAction="#onCreateNewTaskClick" prefHeight="26.0" prefWidth="79.0" scaleShape="false" style="-fx-background-color: #65bb72;" text="Add" />
 
 
 
-      <Label fx:id="completed_tasks" layoutX="272.0" layoutY="405.0" scaleShape="false" text="Completed Tasks">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
 
-      <Label fx:id="completed_task_1" layoutX="23.0" layoutY="437.0" prefHeight="40.0" prefWidth="596.0" scaleShape="false" style="-fx-background-color: #cad998;" />
-      <Button fx:id="completed_task_edit_1" layoutX="625.0" layoutY="444.0" mnemonicParsing="false"  scaleShape="false" style="-fx-background-color: #949590;" text="Edit" />
-      <Button fx:id="completed_task_delete_1" layoutX="673.0" layoutY="444.0" mnemonicParsing="false"  scaleShape="false" style="-fx-background-color: #d34909;" text="Delete" />
+      <HBox alignment="CENTER" spacing="10.0" />
+
+      <ListView fx:id="incompleteTaskListView" layoutX="14.0" layoutY="380.0" prefHeight="200.0" prefWidth="300.0" />
+      <Button layoutX="14.0" layoutY="341.0" onAction="#onEditPendingTaskClick" style="-fx-background-color: #e5de10;" text="Edit" />
+      <Button layoutX="62.0" layoutY="341.0" onAction="#onDeletePendingTaskClick" style="-fx-background-color: #f34408;" text="Remove" />
+
+
+
+      <ListView fx:id="completedTaskListView" layoutX="470.0" layoutY="380.0" prefHeight="200.0" prefWidth="300.0" />
+      <Button layoutX="656.0" layoutY="339.0" onAction="#onEditCompletedTaskClick" style="-fx-background-color: #e5de10;" text="Edit" />
+      <Button layoutX="708.0" layoutY="341.0" onAction="#onDeleteCompletedTaskClick" style="-fx-background-color: #f34408;" text="Remove" />
+
+
+      <Button fx:id="markComplete" layoutX="331.0" layoutY="415.0" mnemonicParsing="false" onAction="#onMarkCompleteClick" prefHeight="26.0" prefWidth="123.0" scaleShape="false" style="-fx-background-color: #65bb72;" text="Mark Complete &gt;&gt;" />
+      <Button fx:id="markIncomplete" layoutX="327.0" layoutY="520.0" mnemonicParsing="false" onAction="#onMarkPendingClick" prefHeight="26.0" prefWidth="131.0" scaleShape="false" style="-fx-background-color: #f38808;" text="&lt;&lt; Mark Incomplete" />
+
+
+
+
+
    </children>
 </Pane>
